@@ -15,9 +15,27 @@ const MyApp({super.key});
         appBar: AppBar(
           title: Text('This is my first app'),
           elevation: 16 ,
-          backgroundColor:Colors.blue,
+          backgroundColor:Colors.green,
         ),
-body:Text('this is my first data'),
+body: ListView(
+  children: [
+    ListTile(
+      leading: Icon(Icons.star),
+      title: Text('Texts'),
+      subtitle: Text('Introduction to flutter Texts'),
+    ),
+        ListTile(
+          leading: Icon(Icons.title),
+          title: Text('container'),
+          subtitle: Text('Introduction to flutter container'),
+        ),
+      ListTile(
+        leading: Icon(Icons.title),
+        title: Text('Buttons'),
+        subtitle: Text('Introduction to flutter buttons'),
+      ),
+  ],
+),
       ),
     );
   }
