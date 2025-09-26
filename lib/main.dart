@@ -1,42 +1,85 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/text_screen.dart';
+
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-const MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Simple App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('This is my first app'),
-          elevation: 16 ,
-          backgroundColor:Colors.green,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurple,
+          foregroundColor: Colors.white,
         ),
-body: ListView(
-  children: [
-    ListTile(
-      leading: Icon(Icons.star),
-      title: Text('Texts'),
-      subtitle: Text('Introduction to flutter Texts'),
-    ),
-        ListTile(
-          leading: Icon(Icons.title),
-          title: Text('container'),
-          subtitle: Text('Introduction to flutter container'),
-        ),
-      ListTile(
-        leading: Icon(Icons.title),
-        title: Text('Buttons'),
-        subtitle: Text('Introduction to flutter buttons'),
       ),
-  ],
-),
+     home: const MyHomePage(title:'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  final String title;
+
+  const MyHomePage({
+    super.key, required this.title});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(" Home Page"),
+
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            dense: true,
+            title: Text("container"),
+            subtitle: Text("Introduction to flutter containers"),
+            leading: Icon(Icons.account_circle),
+
+          ),
+          ListTile(
+            dense: true,
+            title: Text("Text"),
+            subtitle: Text("Introduction to flutter texts"),
+            leading: Icon(Icons.star),
+            onTap: () =>
+            {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => TextScreen()),
+              ),
+            },
+          ),
+          ListTile(
+            dense: true,
+            title: Text("Padding Layout"),
+            subtitle: Text("Introduction to flutter padding"),
+            leading: Icon(Icons.star),
+            onTap: () => {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => TextScreen()),
+              ),
+            },
+          ),
+
+        ],
       ),
     );
   }
 }
+
