@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/screen_container.dart';
 import 'Screens/text_screen.dart';
-
+import 'Screens/screen_padding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,6 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text("container"),
             subtitle: Text("Introduction to flutter containers"),
             leading: Icon(Icons.account_circle),
+            onTap: () =>{
+              Navigator.push(context,
+                MaterialPageRoute(builder:(context) => ScreenContainer()),
+              ),
+            },
 
           ),
           ListTile(
@@ -69,10 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
             dense: true,
             title: Text("Padding Layout"),
             subtitle: Text("Introduction to flutter padding"),
-            leading: Icon(Icons.star),
+            leading: Icon(Icons.key),
             onTap: () => {
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => TextScreen()),
+                MaterialPageRoute(builder: (context) => ScreenPadding()),
               ),
             },
           ),
