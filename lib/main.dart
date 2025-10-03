@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'Screens/screen_column.dart';
 import 'Screens/screen_container.dart';
+import 'Screens/screen_form.dart';
+import 'Screens/screen_images.dart';
 import 'Screens/screen_lists.dart';
 import 'Screens/screen_rows.dart';
 import 'Screens/text_screen.dart';
@@ -115,6 +117,29 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ScreenColumn()),
+              ),
+            },
+          ),
+          ListTile(
+            dense: true,
+            title: Text("ImageScreen"),
+            subtitle: Text("Introduction to images"),
+            leading: Icon(Icons.account_circle),
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ScreenImages()),
+              ),
+            },
+          ), ListTile(
+            dense: true,
+            title: Text("Form"),
+            subtitle: Text("Introduction to flutter forms"),
+            leading: Icon(Icons.star),
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ScreenForm()),
               ),
             },
           ),
