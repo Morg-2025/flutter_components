@@ -38,7 +38,35 @@ class _ScreenFormState extends State<ScreenForm> {
               key: _formKey,
        child: Column(
               children:[
-                FormBuilderTextField(name: "First name"),
+
+                FormBuilderTextField(name: "first name",
+                    autofocus: true,
+                 // keyboardType: TextInputType.name,
+                  textCapitalization: TextCapitalization.words,
+                    readOnly: false,
+                    decoration: InputDecoration(
+                      helperMaxLines: 2,
+                        hintText: "Enter your first name",
+                      isDense: true,
+                      //counter: Text("2"),
+                      labelText: "First Name",
+                      icon: Icon(Icons.person),
+                     helperText: "First name as it appears on your passport First name as it appears on your passport",
+                     helperStyle: TextStyle(color: Colors.pink.shade700)
+
+
+                     // label: Text("My custom label", style: TextStyle(color: Colors.cyan, fontSize: 20),),
+                    ),
+                ),
+                FormBuilderTextField(name: "last name",
+                    decoration: InputDecoration(
+                      labelText: "Last Name",
+                      icon: Icon(Icons.person),
+                        helperText: "Last name as it appears on your passport",
+                        helperStyle: TextStyle(color: Colors.pink.shade700)
+
+                    ),
+                ),
               ],
           ),
 
