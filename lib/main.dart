@@ -6,6 +6,7 @@ import 'Screens/screen_form.dart';
 import 'Screens/screen_images.dart';
 import 'Screens/screen_lists.dart';
 import 'Screens/screen_rows.dart';
+import 'Screens/screen_toast.dart';
 import 'Screens/text_screen.dart';
 import 'Screens/screen_padding.dart';
 
@@ -88,7 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
             dense: true,
             title: Text("ScreenRow"),
             subtitle: Text("Introduction to screen rows"),
-            leading: Icon(Icons.star),
+            leading: Icon(Icons.view_column_outlined),
+            trailing: Icon(Icons.chevron_right),
             onTap: () => {
               Navigator.push(
                 context,
@@ -122,6 +124,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           ListTile(
             dense: true,
+            title: Text("ScreenToast"),
+            subtitle: Text("Introduction to Screen toast"),
+            trailing: Icon(Icons.chevron_right),
+            leading: Icon(Icons.account_circle),
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ScreenToast()),
+              ),
+            },
+          ),
+          ListTile(
+            dense: true,
             title: Text("ImageScreen"),
             subtitle: Text("Introduction to images"),
             leading: Icon(Icons.account_circle),
@@ -131,17 +146,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 MaterialPageRoute(builder: (context) => ScreenImages()),
               ),
             },
-          ), ListTile(
+          ),
+          ListTile(
             dense: true,
             title: Text("Form"),
             subtitle: Text("Introduction to flutter forms"),
             leading: Icon(Icons.star),
-            onTap: () => {
+            onTap: () =>
+            {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ScreenForm()),
               ),
-            },
+            }
           ),
         ],
       ),

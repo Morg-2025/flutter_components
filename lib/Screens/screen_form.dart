@@ -7,7 +7,6 @@ class ScreenForm extends StatefulWidget {
 }
 
 class _ScreenFormState extends State<ScreenForm> {
-  
   int age = 27;
 
   final _formKey = GlobalKey<FormBuilderState>();
@@ -16,15 +15,12 @@ class _ScreenFormState extends State<ScreenForm> {
     age++;
     print("Age now is ${age} years");
 
-    setState((){
-    });
-
+    setState(() {});
   }
-  my_age_decrease(){
-    age--;
-    setState(() {
 
-    });
+  my_age_decrease() {
+    age--;
+    setState(() {});
   }
 
   @override
@@ -32,45 +28,47 @@ class _ScreenFormState extends State<ScreenForm> {
     return Scaffold(
       appBar: AppBar(title: Text("Form")),
       body: SingleChildScrollView(
-     child:  Column(
-        children: [
-          FormBuilder(
+        child: Column(
+          children: [
+            FormBuilder(
               key: _formKey,
-       child: Column(
-              children:[
-
-                FormBuilderTextField(name: "first name",
+              child: Column(
+                children: [
+                  FormBuilderTextField(
+                    onTap: () => {print("Focused on first name.....")},
+                    name: "first name",
                     autofocus: true,
-                 // keyboardType: TextInputType.name,
-                  textCapitalization: TextCapitalization.words,
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.words,
+                    textInputAction: TextInputAction.next,
                     readOnly: false,
                     decoration: InputDecoration(
                       helperMaxLines: 2,
-                        hintText: "Enter your first name",
+                      hintText: "Enter your first name",
                       isDense: true,
                       //counter: Text("2"),
                       labelText: "First Name",
                       icon: Icon(Icons.person),
-                     helperText: "First name as it appears on your passport First name as it appears on your passport",
-                     helperStyle: TextStyle(color: Colors.pink.shade700)
+                      helperText:
+                          "First name as it appears on your passport First name as it appears on your passport",
+                      helperStyle: TextStyle(color: Colors.pink.shade700),
 
-
-                     // label: Text("My custom label", style: TextStyle(color: Colors.cyan, fontSize: 20),),
+                      // label: Text("My custom label", style: TextStyle(color: Colors.cyan, fontSize: 20),),
                     ),
-                ),
-                FormBuilderTextField(name: "last name",
+                  ),
+                  FormBuilderTextField(
+                    name: "last name",
                     decoration: InputDecoration(
                       labelText: "Last Name",
                       icon: Icon(Icons.person),
-                        helperText: "Last name as it appears on your passport",
-                        helperStyle: TextStyle(color: Colors.pink.shade700)
-
+                      helperText: "Last name as it appears on your passport",
+                      helperStyle: TextStyle(color: Colors.pink.shade700),
                     ),
-                ),
-              ],
-          ),
+                  ),
+                ],
+              ),
 
-         /* InkWell(
+              /* InkWell(
             onTap: ()=>{
               my_age_increase()
             },
@@ -99,9 +97,9 @@ class _ScreenFormState extends State<ScreenForm> {
               ),
             ),
           ),*/
-      ),
-        ],
-      ),
+            ),
+          ],
+        ),
       ),
     );
   }

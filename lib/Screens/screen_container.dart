@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_components/Screens/text_screen.dart';
 
 class ScreenContainer extends StatelessWidget {
+  const ScreenContainer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
