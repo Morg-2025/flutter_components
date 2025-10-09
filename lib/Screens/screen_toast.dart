@@ -34,10 +34,10 @@ makeToast();
     print("making toast");
     Fluttertoast.showToast(
         msg: "This is Center Short Toast",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.TOP,
         timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         textColor: Colors.white,
         fontSize: 16.0
     );

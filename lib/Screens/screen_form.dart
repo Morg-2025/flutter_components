@@ -49,6 +49,7 @@ class _ScreenFormState extends State<ScreenForm> {
                       //counter: Text("2"),
                       labelText: "First Name",
                       icon: Icon(Icons.person),
+                      iconColor: Colors.blue,
                       helperText:
                           "First name as it appears on your passport First name as it appears on your passport",
                       helperStyle: TextStyle(color: Colors.pink.shade700),
@@ -57,12 +58,33 @@ class _ScreenFormState extends State<ScreenForm> {
                     ),
                   ),
                   FormBuilderTextField(
+                    textInputAction: TextInputAction.next,
                     name: "last name",
+                    onChanged: (val){
+                      print(val);
+                    },
                     decoration: InputDecoration(
+                      hintText: "Enter your last name",
                       labelText: "Last Name",
                       icon: Icon(Icons.person),
+                      iconColor: Colors.orange,
+                      fillColor: Colors.blue.shade100,
+                      filled: true,
                       helperText: "Last name as it appears on your passport",
                       helperStyle: TextStyle(color: Colors.pink.shade700),
+                    ),
+                  ),
+                  FormBuilderTextField(
+                    name: "phone number",
+                    keyboardType:TextInputType.phone ,
+                    onChanged: (val){
+                      print(val);
+                    },
+                    decoration: InputDecoration(
+                      labelText: "Contact",
+                      icon: Icon(Icons.person),
+                      iconColor: Colors.green,
+                      helperStyle: TextStyle(color: Colors.pink.shade700, fontSize: 16),
                     ),
                   ),
                 ],
