@@ -64,11 +64,14 @@ class _ScreenFormState extends State<ScreenForm> {
                       print(val);
                     },
                     decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ) ,
                       hintText: "Enter your last name",
                       labelText: "Last Name",
                       icon: Icon(Icons.person),
                       iconColor: Colors.orange,
-                      fillColor: Colors.blue.shade100,
+                      fillColor: Colors.white,
                       filled: true,
                       helperText: "Last name as it appears on your passport",
                       helperStyle: TextStyle(color: Colors.pink.shade700),
@@ -86,6 +89,20 @@ class _ScreenFormState extends State<ScreenForm> {
                       iconColor: Colors.green,
                       helperStyle: TextStyle(color: Colors.pink.shade700, fontSize: 16),
                     ),
+                  ),
+                  FormBuilderDateTimePicker(name: "dob",
+                    inputType: InputType.date,
+
+                    decoration: InputDecoration(
+                      label: Text("Date Of Birth"),
+                          icon: Icon(Icons.calendar_month),
+                      hintText: "Enter date",
+                      helperText: "Enter your exact date of birth ",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5)
+                      )
+                    ),
+
                   ),
                 ],
               ),
